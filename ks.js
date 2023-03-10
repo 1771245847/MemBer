@@ -1,80 +1,71 @@
 // ==UserScript==
-// @name              VIP视频解析
-// @namespace         https://github.com/
-// @version           1.0.5
-// @icon              https://gw.alicdn.com/tfs/TB1ZvwSycbpK1RjSZFyXXX_qFXa-48-48.ico
-// @description       解析各大视频网站VIP视频，支持优酷，爱奇艺，乐视，腾讯视频，土豆，芒果TV!
-// @author            syhyz1990
-// @license           MIT
-// @supportURL        https://github.com/
-// @match             *://v.youku.com/v_*
-// @match             *://m.youku.com/v*
-// @match             *://m.youku.com/a*
-// @match             *://*.iqiyi.com/v_*
-// @match             *://*.iqiyi.com/w_*
-// @match             *://*.iqiyi.com/a_*
-// @match             *://*.iqiyi.com/dianying/*
-// @match             *://*.le.com/ptv/vplay/*
-// @match             *v.qq.com/x/cover/*
-// @match             *v.qq.com/x/page/*
-// @match             *v.qq.com/play*
-// @match             *://*.tudou.com/listplay/*
-// @match             *://*.tudou.com/albumplay/*
-// @match             *://*.tudou.com/programs/view/*
-// @match             *://*.mgtv.com/b/*
-// @match             *://film.sohu.com/album/*
-// @match             *://tv.sohu.com/*
-// @match             *://*.bilibili.com/video/*
-// @match             *://*.bilibili.com/anime/*
-// @match             *://*.bilibili.com/bangumi/play/*
-// @match             *://vip.pptv.com/show/*
-// @match             *://v.pptv.com/show/*
-// @match             *://*.baofeng.com/play/*
-// @match             *://v.yinyuetai.com/video/*
-// @match             *://v.yinyuetai.com/playlist/*
-// @match             *://vip.1905.com/play/*
-// @run-at            document-idle
-// @grant             unsafeWindow
-// @grant             GM_addStyle
+// @name         VIP解析
+// @description  腾讯视频、爱奇艺、优酷土豆、芒果TV等平台视频VIP免费看。代码精简、含有20个超稳定急速解析源、没有任何花哨内容、专门解析视频！
+// @icon         https://gitee.com/Bsutss/gitee.vip/raw/master/vip.jpg
+// @version      1.0
+// @author       1771245847
+// @run-at       document-body
+// @include      https://v.qq.com/x/page/*.html*
+// @include      https://v.qq.com/x/cover/*.html*
+// @include      https://www.iqiyi.com/v_*.html*
+// @include      https://v.youku.com/v_show/*
+// @include      https://video.tudou.com/v/*
+// @include      https://www.mgtv.com/b/*
+// @grant        none
+// @note         2020.02.20 V1.0 其实这个脚本不仅仅适用于腾讯视频、爱奇艺、优酷土豆这三个平台，但是为了保证稳定性，其他小平台就没有做适配了
+// @copyright    该脚本完全由本人原创，谢绝抄袭部分或全部代码！如发现有人抄袭，欢迎举报，谢谢
 // ==/UserScript==
 
-(function () {
-  'use strict';
+(function() {
+    'use strict';
 
-  GM_addStyle('.h-icon-play {color: #d926b5;fill: #d926b5;height: 80px;width: 80px;position: fixed;z-index: 99999;top: 180px;left: 0;cursor: pointer;}  .h-ol {position: fixed;top: 250px;left: 20px;z-index: 99999;counter-reset: li;list-style: none;font-size: 14px;padding: 0;margin-bottom: 4em;text-shadow: 0 1px 0 rgba(255, 255, 255, .5);display: none;}  .h-ol a {position: relative;display: block;padding: 3px 10px 3px 2em;margin: 0.5em 0;background: #ddd;color: #444;text-decoration: none;border-radius: 0.3em;transition: all 0.3s ease-out;}  .h-ol a:hover {background: #eee;color: #ff6f5c;transition: all 0.3s ease-out;}  .h-ol a::before {content: counter(li);counter-increment: li;position: absolute;left: -1.2em;top: 50%;margin-top: -1.2em;background: #87ceeb;height: 2em;width: 2em;line-height: 2em;border: 0.2em solid #fff;text-align: center;font-weight: bold;border-radius: 2em;}');
+    var source_arr = new Array(
+        "https://jiexi.380k.com/?url=", // default-most-f
+        "https://okjx.cc/?url=", // ok-f
+        "https://timerd.me/static/cv.html?zwx=", // ok
+        "http://www.600m.net/api/?v=", // ok
+        "https://www.8090g.cn/?url=", // ok-need-flash
+        "http://at520.cn/jx/?url=", // ok-f-sigu
+        "http://jx.618g.com/?url=", // ok-f-by-380k
+        "https://jx.618g.com/?url=", // ok-f
+        "https://v.canzhisong.cn/v.php?url=", // ok-f-by-2Ajx
+        "https://www.2ajx.com/vip.php?url=", // ok-f-by-2Ajx
+        "http://17kyun.com/api.php?url=", // ok
+        "https://jiexi8.com/vip/index.php?url=", // ok
+        "https://yi29f.cn/vip/vip.php?url=", // ok-f
+        "https://www.ckmov.xyz/jx/api/?url=", // ok-f
+        "https://jx.98a.ink/?url=", // ok
+        "https://api.rdhk.net/?url=", // ok-f
+        "https://api.78sy.cn/?url=", // ok-f-first
+        "https://www.1717yun.com/yunjx/?url=", // ok-need-flash
+        "http://vip.jlsprh.com/?url=", // ok
+        "https://api.lkan.cc/?url="// ok-s
+    );
 
-  let api = [
-    {name: '金桥解析', url: 'http://jqaaa.com/jx.php?url='},
-    {name: '腾讯稳定', url: 'http://jx.618ge.com/?url='},
-    {name: '无敌解析', url: 'https://z1.m1907.cn/?jx='},
-    {name: '无名解析', url: 'https://beaacc.com/api.php?url='},
-    {name: '通用接口', url: 'http://jx.aeidu.cn/index.php?url='}];
-
-
-  let main = {
-    showButton: function () {
-      if (location.host.match(/youku|iqiyi|le|qq|tudou|mgtv|sohu|acfun|bilibili|pptv|baofeng|yinyuetai/ig)) {
-        let mainButton = '<div class="h-icon-play" title="点击显示解析地址"><svg viewBox="0 0 512 512"><path d="M422.6 193.6c-5.3-45.3-23.3-51.6-59-54 -50.8-3.5-164.3-3.5-215.1 0 -35.7 2.4-53.7 8.7-59 54 -4 33.6-4 91.1 0 124.8 5.3 45.3 23.3 51.6 59 54 50.9 3.5 164.3 3.5 215.1 0 35.7-2.4 53.7-8.7 59-54C426.6 284.8 426.6 227.3 422.6 193.6zM222.2 303.4v-94.6l90.7 47.3L222.2 303.4z"></path></svg></div>';
-        let apiList = '<ol class="h-ol"></ol>';
-        let github = '<iframe src="https://ghbtns.com/github-btn.html?user=syhyz1990&repo=media&type=star&type=star&count=true" frameborder="0" scrolling="0" style="height: 20px;max-width: 110px;padding: 0 5px;box-sizing: border-box;margin-top: 10px;"></iframe>';
-        $(top.document.body).append(mainButton);
-        $(top.document.body).append(apiList);
-
-        api.forEach((val, index) => {
-          $('.h-ol').append(`<li><a target="_blank" href="${val.url + encodeURI(location.href)}">${val.name}</a></li>`)
-        });
-        //赞赏
-        $('.h-ol').append(`<li><a target="_blank" style="color: #999;" href="https://gitee.com/githongbo/gitee.vip/raw/master/wx.jpg">赞赏</a></li>`);
-        $('.h-ol').append(github);
-
-        $(top.document.body).on('click', '.h-icon-play', () => {
-          $('.h-ol').fadeToggle('fast');
-        });
-      }
+    var button = document.createElement('div');
+    var clicked_num = 0;
+    button.innerHTML = "<div title='再次点击可自动切换解析源'>♔ VIP 解析 </div>";
+    button.style.cssText = "display:block; position:fixed; left:-56px; top:10%; width:100px; height:40px; background-color:#ff5c38 !important; color:#ffffff !important; z-index:999999; border-radius:0 20px 20px 0; text-align:center; line-height:40px; font-size:16px; cursor:pointer;";
+    // button.setAttribute("onMouseOver", "this.style.padding='20px;'");
+    button.onmouseover = function(){
+        this.style.left = '0';
+        this.style.transition = "all 0.3s";
     }
-  };
+    button.onmouseout = function(){
+        this.style.left = '-56px';
+        this.style.transition = "all 1s";
+    }
+    button.onclick = function(){
+        this.style.color = 'yellow';
+        clicked_num += 1;
+        if(clicked_num == 1){
+            window.open(source_arr[0] + window.location.href);
+            alert("新页面播放VIP视频，如果解析失败，可以再次点击解析按钮！祝好~");
+        }else{
+            let i = Math.floor(Math.random()*source_arr.length); // 参考：https://www.jianshu.com/p/5bcfc9d07b9a
+            window.open(source_arr[i] + window.location.href);
+        }
+    };
+    document.body.append(button);
 
-  $(function () {
-    main.showButton();
-  });
 })();
