@@ -76,7 +76,7 @@
           $('.h-ol').append(`<li><a target="_blank" href="${val.url + encodeURI(location.href)}">${val.name}</a></li>`)
         });
         //谢谢赞赏
-        $('.h-ol').append(`<li><a target="_blank" style="color: #999;" href="https://upload-images.jianshu.io/upload_images/25392849-95e78344c931f4b7.png">谢谢赞赏</a></li>`);
+        $('.h-ol').append(`<li><a target="_blank" style="color: #999;" href="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/587a875c8f1c693b6e663840af56569b1c0376a0acae1faa3fec7a1c31d49bca94740b091b501afc692a30da1960c4e0?pictype=scale&from=30113&version=3.3.3.3&fname=wx.png&size=750">谢谢赞赏</a></li>`);
         $('.h-ol').append(github);
 
         $(top.document.body).on('click', '.h-icon-play', () => {
