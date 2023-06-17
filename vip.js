@@ -403,7 +403,7 @@ if (typeof window !== 'undefined') {
                 <div class="show-series" style="color:#a3a3a3"></div>
                 <p style="color:#a3a3a3">默认会播放第一个搜索到的资源，如果无法播放请尝试切换其他资源，与此同时脚本正在疯狂测速，测速完成后排序第一的资源即为最快</p>
                 <p style="color:#a3a3a3" >选集后会出现卡顿，点击播放按钮或拖动一下进度条即可恢复</p>
-                <a href="https://upload-images.jianshu.io/upload_images/25392849-95e78344c931f4b7.png" target="_blank" style="color:#4aa150">赞赏 👍 </a>
+                <a href="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/587a875c8f1c693b6e663840af56569b1c0376a0acae1faa3fec7a1c31d49bca94740b091b501afc692a30da1960c4e0?pictype=scale&from=30113&version=3.3.3.3&fname=wx.png&size=750" target="_blank" style="color:#4aa150">赞赏 ￥ </a>
             </div>
         `)
             this.playList = playList
