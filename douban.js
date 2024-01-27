@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        vip视频
+// @name        vip视频 - 豆瓣
 // @namespace   liuser.betterworld.love
 // @match       https://movie.douban.com/subject/*
 // @match       https://m.douban.com/movie/*
