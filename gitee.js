@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         VIP解析
-// @namespace    https://gitee.com/
-// @version      1.0
+// @namespace    https://gitee.com/Bsutss
+// @version      1.0.0
 // @description  修复不初始化插件的bug
 // @description  支持优酷vip，腾讯vip，爱奇艺vip，芒果vip等常用视频，都是用的网络资源来解析，随时可能失效
 // @author       1771245847
