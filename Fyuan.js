@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name             Vip解析
 // @namespace       https://github.com/1771245847
-// @version           1.0.8
+// @version           1.0.0
 // @icon              https://gitee.com/Bsutss/gitee.vip/raw/master/vip.jpg
 // @description       vip视频解析
 // @author            1771245847
