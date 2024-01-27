@@ -11,7 +11,7 @@
 // @require     https://cdn.staticfile.org/mux.js/6.3.0/mux.min.js
 // @require     https://cdn.staticfile.org/shaka-player/4.3.5/shaka-player.compiled.js
 // @require     https://cdn.staticfile.org/artplayer/5.0.6/artplayer.min.js
-// @version     3.2
+// @version     1.0.0
 // @author      1771245847
 // @description 打开豆瓣，搜索自己想看的电影，点击一键播放
 // @license MIT
