@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name              VIP 视频解析
-// @version           3.1.0
+// @version           1.0.0
 // @description       支持: 腾讯视频、爱奇艺、优酷
 // @author            1771245847
-// @icon              https://gitee.com/Bsutss/gitee.vip/raw/master/favicon.jpg
+// @icon              https://gitee.com/Bsutss/gitee.vip/raw/master/vip.jpg
 // @namespace         https://greasyfork.org/users/665670
 // @require           https://cdn.bootcss.com/jquery/3.5.1/jquery.min.js
 // @match             *://v.qq.com/x/cover/*
