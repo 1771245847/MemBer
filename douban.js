@@ -7,7 +7,7 @@
 // @grant       GM_xmlhttpRequest
 // @connect     *
 // @run-at      document-end
-// @require     https://cdn.jsdelivr.net/npm/xy-ui@1.10.7/+esm
+// @require     https://fastly.jsdelivr.net/npm/xy-ui@1.10.7/+esm
 // @require     https://cdn.staticfile.org/mux.js/6.3.0/mux.min.js
 // @require     https://cdn.staticfile.org/shaka-player/4.3.5/shaka-player.compiled.js
 // @require     https://cdn.staticfile.org/artplayer/5.0.6/artplayer.min.js
