@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         vip视频解析
 // @namespace    vip解析
-// @version      1.0
+// @version      1.0.0
 // @description  解析各大视频网站，直接跳转以及备用接口跳转
 // @author       1771245847
 // @org-author   https://gitee.com/
