@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              VIP视频解析
 // @namespace         1771245847
-// @version           1.0
+// @version           1.0.0
 // @icon              https://gitee.com/Bsutss/gitee.vip/raw/master/vip.jpg
 // @description       解析各大视频网站VIP视频，支持优酷，爱奇艺，乐视，腾讯视频，芒果TV
 // @author            1771245847
