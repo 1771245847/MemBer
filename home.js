@@ -5,7 +5,7 @@
 // @description  解析各大视频网站，直接跳转以及备用接口跳转
 // @author       1771245847
 // @org-author   https://gitee.com/
-// @icon         https://gitee.com/Bsutss/gitee.vip/raw/master/favicon.jpg
+// @icon         https://gitee.com/Bsutss/gitee.vip/raw/master/vip.jpg
 // @match        *://*.iqiyi.com/v_*
 // @match        *://v.youku.com/*
 // @match        *://*.le.com/*
