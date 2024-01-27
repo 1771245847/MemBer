@@ -2,7 +2,7 @@
 // @name         VIP解析
 // @description  腾讯视频、爱奇艺、优酷土豆、芒果TV等平台视频VIP免费看。代码精简、含有20个超稳定急速解析源、没有任何花哨内容、专门解析视频！
 // @icon         https://gitee.com/Bsutss/gitee.vip/raw/master/vip.jpg
-// @version      1.0
+// @version      1.0.0
 // @author       1771245847
 // @run-at       document-body
 // @include      https://v.qq.com/x/page/*.html*
