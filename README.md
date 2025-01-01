@@ -6,3 +6,5 @@ Tampermonkey 是一款用户脚本管理器 它适用于 Chrome, Microsoft Edge,
 嗅探 解析（Jsoup和JavaScript） 远程播放功能，手机，电视，电脑统一 浏览器自定义JS插件功能
 
 永久私自抄袭用于任何盈利行为
+
+本仓库均来收集于互联网，请勿用于任何商业用途，仅供学习交流
